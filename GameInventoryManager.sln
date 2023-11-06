@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameInventoryManager", "GameInventoryManager\GameInventoryManager.csproj", "{EECEFC74-3D26-4A8C-8F87-A969034C2C16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EECEFC74-3D26-4A8C-8F87-A969034C2C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECEFC74-3D26-4A8C-8F87-A969034C2C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECEFC74-3D26-4A8C-8F87-A969034C2C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECEFC74-3D26-4A8C-8F87-A969034C2C16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {293FE700-7D77-4508-8695-324F2E01A204}
+	EndGlobalSection
+EndGlobal
