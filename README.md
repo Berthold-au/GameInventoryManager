@@ -1,1 +1,1 @@
-# GameInventoryManager
+# Game Inventory Manager
