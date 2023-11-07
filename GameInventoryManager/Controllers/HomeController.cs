@@ -2,6 +2,7 @@
 using GameInventoryManager.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.Diagnostics;
 
 namespace GameInventoryManager.Controllers
@@ -61,7 +62,8 @@ namespace GameInventoryManager.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+
+        public IActionResult Edit()
         {
             return View();
         }

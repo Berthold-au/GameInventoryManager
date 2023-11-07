@@ -7,8 +7,7 @@
 
 
 <div class="container">
-        <h2 class="display-4">Welcome to Game Inventory Manager (GIM)</h2>
-        <p>Learn more about  <a href="https://github.com/Berthold-au">The developper</a>.</p>
+        <h2 class="display-4">Game Inventory Manager (GIM)</h2>
     <div>
         <div class="row">
             <a class="btn btn-warning" asp-controller="Home" asp-action="Create"><i class="bi bi-plus-square-fill"></i> Add Game</a>
@@ -24,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var game in Model.OrderBy(u => u.price))
+                @foreach(var game in Model)
                 {
                     <tr>
                         <td>@game.id</td>
@@ -33,8 +32,8 @@
                         <td>@game.possessor</td>
                         <td>
                             <div>
-                                <a class="btn btn-secondary" asp-controller="" asp-action=""><i class="bi bi-pencil-square"></i> Edit</a>
-                                <a class="btn btn-danger" asp-controller="" asp-action=""><i class="bi bi-trash-fill"></i> Delete</a>
+                                <a class="btn btn-secondary" asp-controller="Home" asp-action="Edit" asp-route-id="@game.id" ><i class="bi bi-pencil-square"></i> Edit</a>
+                                <a class="btn btn-danger" asp-controller="" asp-action="" asp-route-id="@game.id"><i class="bi bi-trash-fill"></i> Delete</a>
                             </div>
                         </td>
                     </tr>
