@@ -112,6 +112,22 @@ namespace GameInventoryManager.Controllers
             return View();
         }
 
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Games? gamesdb = _db.games.Find(id);
+            if (gamesdb == null)
+            {
+                return NotFound();
+            }
+            _db.games.Remove(gamesdb);
+            _db.SaveChanges();
+            TempData["success"] = "Category deleted successfully";
+            return RedirectToAction("Index");
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
