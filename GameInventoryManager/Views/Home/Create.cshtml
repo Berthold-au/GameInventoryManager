@@ -1,0 +1,41 @@
+﻿@model Games
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h2 class="display-4">Add other game to list</h2>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="name"></label>
+            <input asp-for="name" type="text" class="form-control" placeholder="Enter the name of game" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div><br />
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="price"></label>
+                    <input asp-for="price" type="number" class="form-control" placeholder="Price ...€?" />
+                    <span asp-validation-for="price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class ="col-md-6">
+                <div class="form-group">
+                    <label asp-for="possessor"></label>
+                    <input asp-for="possessor" type="text" class="form-control" placeholder="Developper name" />
+                    <span asp-validation-for="possessor" class="text-danger"></span>
+                </div>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Add to list" />
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,8 +1,46 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Games>
+
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<div class="container">
+        <h2 class="display-4">Welcome to Game Inventory Manager (GIM)</h2>
+        <p>Learn more about  <a href="https://github.com/Berthold-au">The developper</a>.</p>
+    <div>
+        <div class="row">
+            <a class="btn btn-warning" asp-controller="Home" asp-action="Create"><i class="bi bi-plus-square-fill"></i> Add Game</a>
+        </div><br />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Game Name</th>
+                    <th>Price</th>
+                    <th>Developper</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var game in Model.OrderBy(u => u.price))
+                {
+                    <tr>
+                        <td>@game.id</td>
+                        <td>@game.name</td>
+                        <td>@game.price €</td >
+                        <td>@game.possessor</td>
+                        <td>
+                            <div>
+                                <a class="btn btn-secondary" asp-controller="" asp-action=""><i class="bi bi-pencil-square"></i> Edit</a>
+                                <a class="btn btn-danger" asp-controller="" asp-action=""><i class="bi bi-trash-fill"></i> Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
 </div>
