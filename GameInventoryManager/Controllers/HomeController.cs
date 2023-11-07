@@ -63,10 +63,56 @@ namespace GameInventoryManager.Controllers
         }
 
 
-        public IActionResult Edit()
+        public IActionResult Edit(int? id)
         {
+            if (id == 0 || id == null)
+            {
+                return NotFound();
+            }
+
+            Games? gamesdb = _db.games.FirstOrDefault(u => u.id == id);
+            if (gamesdb == null)
+            {
+                return NotFound();
+            }
+            return View(gamesdb);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Games games)
+        {
+            if (games.name == games.price.ToString())
+            {
+                ModelState.AddModelError("name", "The game cannot have the same name as the price.");
+            }
+
+            // Vérification des doublons
+            var existingGame = _db.games.FirstOrDefault(g => g.name == games.name);
+            if (existingGame != null)
+            {
+                ModelState.AddModelError("name", "This game name already exists.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                // Vérification d'un prix possitive
+                if (games.price >= 0)
+                {
+                    _db.games.Update(games);
+                    _db.SaveChanges();
+                    TempData["success"] = "Your game has been update successfully.";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("name", "The price you entered is not valid.");
+                }
+
+            }
             return View();
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
