@@ -20,3 +20,6 @@ Technologies Used:
 - SQL Server
 - Entity Framework Core
 - HTML, CSS, JavaScript, Bootstrap
+
+
+@Ber1y
