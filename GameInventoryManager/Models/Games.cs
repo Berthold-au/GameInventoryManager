@@ -9,9 +9,9 @@ namespace GameInventoryManager.Models
         public int id { get; set; }
 
         [Required]
-        [StringLength(15)]
+        [StringLength(50)]
         [DisplayName("Game Name")]
-        [MaxLength(15, ErrorMessage = "Game name too long")]
+        [MaxLength(50, ErrorMessage = "Game name too long")]
         [RegularExpression("^[a-zA-Z0-9 ]*$", ErrorMessage = "The game name can only contain letters, numbers and spaces.")]
         public string name { get; set; }
 

@@ -118,14 +118,14 @@ namespace GameInventoryManager.Controllers
             {
                 return NotFound();
             }
-            Games? gamesdb = _db.games.Find(id);
+            var gamesdb = _db.games.Find(id);
             if (gamesdb == null)
             {
                 return NotFound();
             }
             _db.games.Remove(gamesdb);
             _db.SaveChanges();
-            TempData["success"] = "Category deleted successfully";
+            TempData["success"] = "The game was successfully deleted.";
             return RedirectToAction("Index");
         }
 
