@@ -1,5 +1,7 @@
 # Game Inventory Manager
 
+![](./home.jpg)
+
 Key Features:
 
 Homepage: The homepage displays a list of existing data, allowing users to easily browse through records.
